@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:context="http://www.springframework.org/schema/context"
-	   xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	   xmlns:mvc="http://www.springframework.org/schema/mvc"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 http://www.springframework.org/schema/jdbc ">
 
-	<bean id="alumnoXML" class="com.educacionit.spring.entidades.Alumno"></bean>
+    <
+    <bean id="alumnoXML" class="com.educacionit.spring.entidades.Alumno">
+        <constructor-arg index="0" value=""/>
+        <constructor-arg index="1" value=""/>
+        <property name="descripcion">
+            <value>Alumno 1 - desde XML</value>
+        </property>
+        <property name="documento">
+            <value>DNI - 01</value>
+        </property>
+        <property name="cursos">
+            <list>
+                <value>Spring</value>
+                <value>Hibernate</value>
+                <value>Web Apis</value>
+            </list>
+        </property>
+        <property name="correo">
+            <value>alumno1@cursos.com</value>
+        </property>
+
+    </bean>
+
+    <bean id="alumno" class="com.educacionit.spring.entidades.Alumno">
+        <constructor-arg name="descripcion" value="Alumno 3 desde Constructor"></constructor-arg>
+        <constructor-arg name="documento" value="DNI 03"></constructor-arg>
+        <constructor-arg name="cursos">
+            <list>value="Java11"</list>
+            <list>value="Java12"</list>
+            <list>value="Java13"</list>
+        </constructor-arg>
+        <constructor-arg name="correo" value="alumno3@cursos.com"></constructor-arg>
+
+    </bean>
 
 
 </beans>
